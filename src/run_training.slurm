@@ -15,7 +15,7 @@ singularity exec --nv --overlay $SCRATCH/overlay-25GB-500K.ext3:rw /scratch/work
 source /ext3/env.sh
 conda activate
 
-python train.py --outdir=/scratch/es4753/training-runs --cfg=stylegan3-t \
+python ../stylegan3/train.py --outdir=/scratch/es4753/training-runs --cfg=stylegan3-t \
   --data=/scratch/es4753/garfield_images.zip --gpus=8 --batch=32 --gamma=8.2 \
   --mirror=1
 "
