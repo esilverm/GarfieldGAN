@@ -21,7 +21,6 @@ with open(os.path.relpath("../garfield.jl")) as input_file:
             i = Image.open(BytesIO(r.content))
             # convert gif to jpeg
             if i.format == "GIF":
-                i.convert("RGB")
 
                 # first panel
                 i1 = i.convert("RGB").crop((0, 0, i.size[0] / 3, i.size[1]))
