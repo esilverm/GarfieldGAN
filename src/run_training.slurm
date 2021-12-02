@@ -7,7 +7,7 @@
 #SBATCH --error=/scratch/$USER/logs-project/%j_%x.err
 #SBATCH --export=ALL
 #SBATCH --time=48:00:00
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:v100:4
 #SBATCH --mem=64G
 #SBATCH -c 12
 
@@ -22,4 +22,4 @@ pip install torchvision torch ninja psutil
 CUDA_LAUNCH_BLOCKING=1 CXX=g++ python3 ../stylegan3/train.py \
   --outdir=/scratch/$USER/stylegan3-training-runs \
   --cfg=stylegan3-t --data=/scratch/$USER/garfield_images.zip \
-  --gpus=2 --batch=32 --gamma=8.2 --mirror=0 --metrics=none
+  --gpus=4 --batch=32 --gamma=2 --mirror=0 --metrics=none
