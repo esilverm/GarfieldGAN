@@ -23,5 +23,4 @@ CUDA_LAUNCH_BLOCKING=1 CXX=g++ python3 ../stylegan3/train.py \
   --outdir=/scratch/$USER/stylegan3-training-runs \
   --cfg=stylegan3-t --data=/scratch/$USER/garfield_images.zip \
   --gpus=4 --batch=32 --gamma=2 --mirror=0 --metrics=none \
-  --kimg=125000 --snap=20
-  
+  --kimg=125000
